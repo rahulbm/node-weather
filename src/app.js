@@ -19,6 +19,7 @@ hbs.registerPartials(partialsPath)
 
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
+debugger
 
 app.get('', (req, res) => {
     res.render('index', {
@@ -43,7 +44,6 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
-    debugger
     if (!req.query.address) {
         return res.send({
             error: 'You must provide an address!'
